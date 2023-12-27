@@ -1,12 +1,12 @@
-import "./Example.css";
+import "./App.css";
 
 import { useWeb3React } from "@web3-react/core";
 import React, { useEffect, useState } from "react";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 
-import { ConnectionOptions } from "../libs/components/ConnectionOptions";
-import { ConnectionType, switchNetwork } from "../libs/connections";
-import { CHAIN_INFO, INPUT_CHAIN_URL } from "../libs/constants";
+import { ConnectionOptions } from "libs/Web3Components/ConnectionOptions";
+import { ConnectionType, switchNetwork } from "libs/connections";
+import { CHAIN_INFO, INPUT_CHAIN_URL } from "libs/constants";
 
 const FallbackComponent = ({ error }: FallbackProps) => {
   return (
@@ -30,7 +30,7 @@ const useOnBlockUpdated = (callback: () => void) => {
   });
 };
 
-const Example = () => {
+const App = () => {
   const { chainId, account, isActive } = useWeb3React();
   const [blockNumber, setBlockNumber] = useState<number>(0);
   const [connectionType, setConnectionType] = useState<ConnectionType | null>(
@@ -71,4 +71,4 @@ const Example = () => {
   );
 };
 
-export default Example;
+export default App;

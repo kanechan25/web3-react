@@ -1,24 +1,26 @@
-import './index.css'
+import "./index.css";
 
-import { Buffer } from 'buffer'
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { Buffer } from "buffer";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import Example from './example/Example'
-import { Web3ContextProvider } from './libs/components/Web3ContextProvider'
+import App from "App";
+import { Web3ContextProvider } from "libs/Web3Components/Web3ContextProvider";
 
 if (window.ethereum) {
-  window.ethereum.autoRefreshOnNetworkChange = false
+  window.ethereum.autoRefreshOnNetworkChange = false;
 }
 
 // Node polyfills required by WalletConnect are no longer bundled with webpack
-window.Buffer = Buffer
+window.Buffer = Buffer;
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 root.render(
   <React.StrictMode>
     <Web3ContextProvider>
-      <Example />
+      <App />
     </Web3ContextProvider>
   </React.StrictMode>
-)
+);

@@ -3,9 +3,9 @@ import React from "react";
 import {
   ConnectionType,
   getHasMetaMaskExtensionInstalled,
-} from "../connections";
-import { METAMASK_URL } from "../constants";
-import { Option } from "./Option";
+} from "libs/connections";
+import { METAMASK_URL } from "libs/constants";
+import { Option } from "libs/Web3Components/Option";
 
 type ConnectOptionsParams = {
   activeConnectionType: ConnectionType | null;
