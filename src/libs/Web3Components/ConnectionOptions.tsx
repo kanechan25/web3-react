@@ -6,6 +6,9 @@ import {
 } from "libs/web3Config/connectors";
 import { METAMASK_URL } from "libs/web3Config/constants";
 import { Option } from "libs/web3Components/Option";
+import iconMetamask from "assets/img/wallets/metamask.png";
+import iconCoinbase from "assets/img/wallets/coinbaseWalletIcon.svg";
+import iconWalletCn from "assets/img/wallets/walletConnectIcon.svg";
 
 type ConnectOptionsParams = {
   activeConnectionType: ConnectionType | null;
@@ -35,6 +38,7 @@ export const ConnectionOptions = ({
         connectionType={ConnectionType.INJECTED}
         onActivate={onActivate}
         onDeactivate={onDeactivate}
+        iconWallet={iconMetamask}
       />
     ) : (
       <a href={METAMASK_URL}>
@@ -52,6 +56,7 @@ export const ConnectionOptions = ({
         connectionType={ConnectionType.COINBASE_WALLET}
         onActivate={onActivate}
         onDeactivate={onDeactivate}
+        iconWallet={iconCoinbase}
       />
     );
 
@@ -65,6 +70,7 @@ export const ConnectionOptions = ({
         connectionType={ConnectionType.WALLET_CONNECT}
         onActivate={onActivate}
         onDeactivate={onDeactivate}
+        iconWallet={iconWalletCn}
       />
     );
 

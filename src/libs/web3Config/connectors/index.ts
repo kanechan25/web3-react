@@ -15,11 +15,11 @@ export interface Connection {
 }
 
 export enum ConnectionType {
-  COINBASE_WALLET = "COINBASE_WALLET",
-  GNOSIS_SAFE = "GNOSIS_SAFE",
-  INJECTED = "INJECTED",
-  NETWORK = "NETWORK",
-  WALLET_CONNECT = "WALLET_CONNECT",
+  COINBASE_WALLET = "Coinbase Wallet",
+  GNOSIS_SAFE = "Gnosis Safe",
+  INJECTED = "Metamask",
+  NETWORK = "Network Connector",
+  WALLET_CONNECT = "Wallet Connect",
 }
 
 function getIsBraveWallet(): boolean {

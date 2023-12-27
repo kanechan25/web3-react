@@ -1,70 +1,34 @@
 import { useWeb3React } from "@web3-react/core";
 import React, { useEffect, useState } from "react";
-import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 
-import { ConnectionOptions } from "libs/web3Components/ConnectionOptions";
 import { ConnectionType, switchNetwork } from "libs/web3Config/connectors";
 import { CHAIN_INFO, INPUT_CHAIN_URL } from "libs/web3Config/constants";
-
-const FallbackComponent = ({ error }: FallbackProps) => {
-  return (
-    <div>
-      <h1>An error occurred: {error.message}</h1>
-      <p>Please reload the application</p>
-    </div>
-  );
-};
-// Listen for new blocks and update the wallet
-const useOnBlockUpdated = (callback: () => void) => {
-  const { provider } = useWeb3React();
-  useEffect(() => {
-    if (!provider) {
-      return;
-    }
-    const subscription = provider.on("block", callback);
-    return () => {
-      subscription.removeAllListeners();
-    };
-  });
-};
+import Web3Connection from "libs/web3Components/Web3Connection";
 
 const Homepage = () => {
-  const { chainId, account, isActive } = useWeb3React();
-  const [blockNumber, setBlockNumber] = useState<number>(0);
+  const { chainId, account } = useWeb3React();
   const [connectionType, setConnectionType] = useState<ConnectionType | null>(
     null
   );
 
-  // Listen for new blocks and update the wallet
-  useOnBlockUpdated(() => {
-    setBlockNumber(blockNumber);
-  });
-
   return (
     <div className="Home">
-      <ErrorBoundary FallbackComponent={FallbackComponent}>
-        {INPUT_CHAIN_URL === "" && (
-          <h2 className="error">Please set your RPC URL in config.ts</h2>
-        )}
-        <h3>{`Block Number: ${blockNumber + 1}`}</h3>
-        <ConnectionOptions
-          activeConnectionType={connectionType}
-          isConnectionActive={isActive}
-          onActivate={setConnectionType}
-          onDeactivate={setConnectionType}
-        />
-        <h3>{`ChainId: ${chainId}`}</h3>
-        <h3>{`Connected Account: ${account}`}</h3>
-        {Object.keys(CHAIN_INFO).map((chainId) => (
-          <div key={chainId}>
-            <button
-              onClick={() => switchNetwork(parseInt(chainId), connectionType)}
-            >
-              {`Switch to ${CHAIN_INFO[chainId].label}`}
-            </button>
-          </div>
-        ))}
-      </ErrorBoundary>
+      {INPUT_CHAIN_URL === "" && (
+        <h2 className="error">Please set your RPC URL in config.ts</h2>
+      )}
+      <Web3Connection />
+
+      <h3>{`ChainId: ${chainId}`}</h3>
+      <h3>{`Connected Account: ${account}`}</h3>
+      {Object.keys(CHAIN_INFO).map((chainId) => (
+        <div key={chainId}>
+          <button
+            onClick={() => switchNetwork(parseInt(chainId), connectionType)}
+          >
+            {`Switch to ${CHAIN_INFO[chainId].label}`}
+          </button>
+        </div>
+      ))}
     </div>
   );
 };

@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "@coinbase/wallet-sdk": "3.3.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.2",
+    "@mui/styled-engine": "^5.15.2",
+    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
     "@walletconnect/ethereum-provider": "1.8",
@@ -20,7 +25,9 @@
     "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-error-boundary": "^3.1.4"
+    "react-error-boundary": "^3.1.4",
+    "react-router-dom": "^6.21.1",
+    "styled-components": "^6.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
