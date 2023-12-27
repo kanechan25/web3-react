@@ -1,0 +1,37 @@
+export declare enum ChainId {
+  ARBITRUM_ONE = 42161,
+  ARBITRUM_GOERLI = 421613,
+  AVALANCHE = 43114,
+  BASE_GOERLI = 84531,
+  BASE = 8453,
+  BNB = 56,
+  CELO = 42220,
+  CELO_ALFAJORES = 44787,
+  GNOSIS = 100,
+  GOERLI = 5,
+  MAINNET = 1,
+  MOONBEAM = 1284,
+  OPTIMISM = 10,
+  OPTIMISM_GOERLI = 420,
+  POLYGON = 137,
+  POLYGON_MUMBAI = 80001,
+  SEPOLIA = 11155111,
+}
+export declare const SUPPORTED_CHAINS: readonly [
+  ChainId.ARBITRUM_ONE,
+  ChainId.ARBITRUM_GOERLI,
+  ChainId.AVALANCHE,
+  ChainId.BASE,
+  ChainId.BASE_GOERLI,
+  ChainId.BNB,
+  ChainId.CELO_ALFAJORES,
+  ChainId.CELO,
+  ChainId.GOERLI,
+  ChainId.MAINNET,
+  ChainId.OPTIMISM,
+  ChainId.OPTIMISM_GOERLI,
+  ChainId.POLYGON,
+  ChainId.POLYGON_MUMBAI,
+  ChainId.SEPOLIA
+];
+export declare type SupportedChainsType = typeof SUPPORTED_CHAINS[number];

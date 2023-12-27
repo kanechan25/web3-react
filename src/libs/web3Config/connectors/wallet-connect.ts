@@ -5,8 +5,8 @@ import {
   Connection,
   ConnectionType,
   onConnectionError,
-} from "libs/connections";
-import { CHAIN_TO_URL_MAP } from "libs/constants";
+} from "libs/web3Config/connectors";
+import { CHAIN_TO_URL_MAP } from "libs/web3Config/constants";
 
 export function buildWalletConnectConnector() {
   const [web3WalletConnect, web3WalletConnectHooks] =

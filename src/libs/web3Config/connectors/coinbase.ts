@@ -5,8 +5,8 @@ import {
   Connection,
   ConnectionType,
   onConnectionError,
-} from "libs/connections";
-import { INPUT_CHAIN_URL } from "libs/constants";
+} from "libs/web3Config/connectors";
+import { INPUT_CHAIN_URL } from "libs/web3Config/constants";
 
 export function buildCoinbaseWalletConnector() {
   const [web3CoinbaseWallet, web3CoinbaseWalletHooks] =
@@ -16,7 +16,7 @@ export function buildCoinbaseWalletConnector() {
           actions,
           options: {
             url: INPUT_CHAIN_URL,
-            appName: "Uniswap Example",
+            appName: "Web3 React",
             reloadOnDisconnect: false,
           },
           onError: onConnectionError,

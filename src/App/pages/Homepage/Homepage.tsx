@@ -1,12 +1,10 @@
-import "./App.css";
-
 import { useWeb3React } from "@web3-react/core";
 import React, { useEffect, useState } from "react";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 
-import { ConnectionOptions } from "libs/Web3Components/ConnectionOptions";
-import { ConnectionType, switchNetwork } from "libs/connections";
-import { CHAIN_INFO, INPUT_CHAIN_URL } from "libs/constants";
+import { ConnectionOptions } from "libs/web3Components/ConnectionOptions";
+import { ConnectionType, switchNetwork } from "libs/web3Config/connectors";
+import { CHAIN_INFO, INPUT_CHAIN_URL } from "libs/web3Config/constants";
 
 const FallbackComponent = ({ error }: FallbackProps) => {
   return (
@@ -30,7 +28,7 @@ const useOnBlockUpdated = (callback: () => void) => {
   });
 };
 
-const App = () => {
+const Homepage = () => {
   const { chainId, account, isActive } = useWeb3React();
   const [blockNumber, setBlockNumber] = useState<number>(0);
   const [connectionType, setConnectionType] = useState<ConnectionType | null>(
@@ -43,7 +41,7 @@ const App = () => {
   });
 
   return (
-    <div className="App">
+    <div className="Home">
       <ErrorBoundary FallbackComponent={FallbackComponent}>
         {INPUT_CHAIN_URL === "" && (
           <h2 className="error">Please set your RPC URL in config.ts</h2>
@@ -71,4 +69,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Homepage;

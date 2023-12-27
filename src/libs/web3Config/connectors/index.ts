@@ -1,12 +1,12 @@
 import { Web3ReactHooks } from "@web3-react/core";
 import { AddEthereumChainParameter, Connector } from "@web3-react/types";
 
-import { buildCoinbaseWalletConnector } from "libs/coinbase";
-import { CHAIN_INFO } from "libs/constants";
-import { buildGnosisSafeConnector } from "libs/gnosis";
-import { buildInjectedConnector } from "libs/injected";
-import { buildNetworkConnector } from "libs/network";
-import { buildWalletConnectConnector } from "libs/wallet-connect";
+import { buildCoinbaseWalletConnector } from "libs/web3Config/connectors/coinbase";
+import { CHAIN_INFO } from "libs/web3Config/constants";
+import { buildGnosisSafeConnector } from "libs/web3Config/connectors/gnosis";
+import { buildInjectedConnector } from "libs/web3Config/connectors/injected";
+import { buildNetworkConnector } from "libs/web3Config/connectors/network";
+import { buildWalletConnectConnector } from "libs/web3Config/connectors/wallet-connect";
 
 export interface Connection {
   connector: Connector;

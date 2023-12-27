@@ -4,8 +4,8 @@ import { Buffer } from "buffer";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import App from "App";
-import { Web3ContextProvider } from "libs/Web3Components/Web3ContextProvider";
+import App from "App/App";
+import { Web3ContextProvider } from "libs/web3Components/Web3ContextProvider";
 
 if (window.ethereum) {
   window.ethereum.autoRefreshOnNetworkChange = false;

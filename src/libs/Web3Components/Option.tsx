@@ -5,7 +5,7 @@ import {
   getConnection,
   tryActivateConnector,
   tryDeactivateConnector,
-} from "../connections";
+} from "../web3Config/connectors";
 
 export const Option = ({
   isEnabled,

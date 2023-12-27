@@ -5,7 +5,7 @@ import {
   Connection,
   ConnectionType,
   onConnectionError,
-} from "libs/connections";
+} from "libs/web3Config/connectors";
 
 export function buildInjectedConnector() {
   const [web3MetamaskWallet, web3MetamaskWalletHooks] =

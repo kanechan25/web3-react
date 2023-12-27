@@ -1,4 +1,4 @@
-import { Chain, CurrentConfig } from "libs/config";
+import { Chain, CurrentConfig } from "libs/web3Config/config";
 
 // Chains
 const MAINNET_CHAIN_ID = 1;

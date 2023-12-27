@@ -6,7 +6,7 @@ import {
   ConnectionType,
   getConnection,
   PRIORITIZED_CONNECTORS,
-} from "libs/connections";
+} from "libs/web3Config/connectors";
 
 async function connect(connector: Connector) {
   try {
