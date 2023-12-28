@@ -13,7 +13,6 @@ const Homepage = () => {
       {INPUT_CHAIN_URL === "" && (
         <h2 className="error">Please set your RPC URL in config.ts</h2>
       )}
-      <Web3Connection />
 
       <h3>{`ChainId: ${chainId}`}</h3>
       <h3>{`Wallet Account: ${account}`}</h3>

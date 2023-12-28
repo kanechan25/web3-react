@@ -6,9 +6,9 @@ import {
 } from "libs/web3Config/connectors";
 import { METAMASK_URL } from "libs/web3Config/constants";
 import { Option } from "libs/web3Components/Option";
-import iconMetamask from "assets/img/wallets/metamask.png";
-import iconCoinbase from "assets/img/wallets/coinbaseWalletIcon.svg";
-import iconWalletCn from "assets/img/wallets/walletConnectIcon.svg";
+import iconMetamask from "assets/images/wallets/metamask.png";
+import iconCoinbase from "assets/images/wallets/coinbaseWalletIcon.svg";
+import iconWalletCn from "assets/images/wallets/walletConnectIcon.svg";
 
 type ConnectOptionsParams = {
   activeConnectionType: ConnectionType | null;

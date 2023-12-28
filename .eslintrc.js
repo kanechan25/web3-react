@@ -23,7 +23,13 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        argsIgnorePattern: "^_",
+      },
+    ],
+    "no-unused-expressions": [0],
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
@@ -31,5 +37,6 @@ module.exports = {
     "prettier/prettier": "off",
     "no-unused-vars": "warn",
     "react/prop-types": "off",
+    "@typescript-eslint/no-explicit-any": ["off"],
   },
 };

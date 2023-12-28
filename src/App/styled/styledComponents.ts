@@ -24,7 +24,7 @@ export const BodyWrapper = styled.div`
 
 export const HeaderWrapper = styled.div`
   width: 100%;
-  background: green;
+  background: transparent;
   position: fixed;
   top: 0;
   z-index: 2;
