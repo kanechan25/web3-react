@@ -14,7 +14,13 @@ const ConnectButton: React.FC<IConnectButton> = ({
   ...rest
 }) => {
   return (
-    <Button variant="outlined" onClick={onClick} disabled={disabled} {...rest}>
+    <Button
+      variant="outlined"
+      color="warning"
+      onClick={onClick}
+      disabled={disabled}
+      {...rest}
+    >
       {children}
     </Button>
   );

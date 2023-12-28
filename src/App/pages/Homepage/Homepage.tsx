@@ -7,9 +7,6 @@ import Web3Connection from "libs/web3Components/Web3Connection";
 
 const Homepage = () => {
   const { chainId, account } = useWeb3React();
-  const [connectionType, setConnectionType] = useState<ConnectionType | null>(
-    null
-  );
 
   return (
     <div className="Home">
@@ -19,16 +16,12 @@ const Homepage = () => {
       <Web3Connection />
 
       <h3>{`ChainId: ${chainId}`}</h3>
-      <h3>{`Connected Account: ${account}`}</h3>
-      {Object.keys(CHAIN_INFO).map((chainId) => (
-        <div key={chainId}>
-          <button
-            onClick={() => switchNetwork(parseInt(chainId), connectionType)}
-          >
-            {`Switch to ${CHAIN_INFO[chainId].label}`}
-          </button>
-        </div>
-      ))}
+      <h3>{`Wallet Account: ${account}`}</h3>
+      {account && (
+        <button onClick={() => switchNetwork(1, ConnectionType.INJECTED)}>
+          {`Switch to ${CHAIN_INFO[1].label}`}
+        </button>
+      )}
     </div>
   );
 };
