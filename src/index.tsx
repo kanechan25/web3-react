@@ -4,8 +4,10 @@ import { Buffer } from "buffer";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import App from "App/App";
+import { Provider } from "react-redux";
 import { Web3ContextProvider } from "libs/web3Components/Web3ContextProvider";
+import App from "App/App";
+import { store } from "App/stores";
 
 if (window.ethereum) {
   window.ethereum.autoRefreshOnNetworkChange = false;
@@ -18,11 +20,13 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <Web3ContextProvider>
+  // <React.StrictMode>
+  <Web3ContextProvider>
+    <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Web3ContextProvider>
-  </React.StrictMode>
+    </Provider>
+  </Web3ContextProvider>
+  // </React.StrictMode>
 );
