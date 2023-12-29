@@ -9,8 +9,6 @@ import { useAppSelector } from 'App/hooks'
 const Web3Modal: React.FC = () => {
   const { isActive } = useWeb3React()
   const currentConnectionType = useAppSelector(({ wallet }) => wallet.connectionType)
-  console.log('__isActive', isActive)
-  console.log('__currentConnectionType', currentConnectionType)
   return (
     <Box sx={{ maxWidth: '350px' }}>
       <TermPolicyWrapper>

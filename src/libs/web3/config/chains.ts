@@ -1,4 +1,4 @@
-export declare enum ChainId {
+export enum ChainId {
   ARBITRUM_ONE = 42161,
   ARBITRUM_GOERLI = 421613,
   AVALANCHE = 43114,

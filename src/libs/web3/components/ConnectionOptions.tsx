@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ConnectionType, getHasMetaMaskExtensionInstalled } from 'libs/web3/config/connectors'
-import { METAMASK_URL } from 'libs/web3/config/constants'
+import { METAMASK_URL } from 'libs/web3/config/chainInfo'
 import { Option } from 'libs/web3/components/Option'
 import iconMetamask from 'assets/images/wallets/metamask.png'
 import iconCoinbase from 'assets/images/wallets/coinbaseWalletIcon.svg'
