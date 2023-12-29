@@ -1,14 +1,10 @@
 import "./App.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Homepage from "App/pages/Homepage/Homepage";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import Header from "App/components/Header/Header";
-import {
-  AppWrapper,
-  BodyWrapper,
-  HeaderWrapper,
-} from "App/styled/styledComponents";
+import { AppWrapper, BodyWrapper, HeaderWrapper } from "App/styles/styled";
+import { routes } from "App/pages/routes";
 
 const FallbackComponent = ({ error }: FallbackProps) => {
   return <BodyWrapper>An error occurred: {error.message}</BodyWrapper>;
@@ -24,10 +20,14 @@ const App = () => {
           </HeaderWrapper>
           <BodyWrapper>
             <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/tokenomics" element={<h1>TOKENOMICS</h1>} />
-              <Route path="/roadmap" element={<h1>ROADMAP</h1>} />
-              <Route path="/*" element={<h1>NOT FOUND</h1>} />
+              {routes?.map((route) => (
+                <Route
+                  path={route.href}
+                  element={route.element}
+                  key={route.id}
+                />
+              ))}
+              <Route path="/*" element={<h1>NOT FOUND PAGE</h1>} />
             </Routes>
           </BodyWrapper>
         </AppWrapper>

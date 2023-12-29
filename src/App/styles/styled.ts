@@ -29,3 +29,30 @@ export const HeaderWrapper = styled.div`
   top: 0;
   z-index: 2;
 `;
+
+export const CommonCenterBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+`;
+export const HeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px;
+`;
+
+export const HeaderLogo = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  margin-right: 12px;
+  text-decoration: none;
+  :hover {
+    cursor: pointer;
+  }
+`;
