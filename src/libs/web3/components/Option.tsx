@@ -8,22 +8,21 @@ import {
   tryDeactivateConnector,
 } from 'libs/web3/config/connectors'
 import { Box, Button } from '@mui/material'
+import { useActions, useAppSelector } from 'App/hooks'
 
 export const Option = ({
   isEnabled,
   isConnected,
   connectionType,
-  onActivate,
-  onDeactivate,
   iconWallet,
 }: {
   isEnabled: boolean
   isConnected: boolean
   connectionType: ConnectionType
-  onActivate: (connectionType: ConnectionType) => void
-  onDeactivate: (connectionType: null) => void
   iconWallet: string
 }) => {
+  const { setConnectionType } = useActions()
+
   const onClick = async () => {
     if (isConnected) {
       const deactivation = await tryDeactivateConnector(getConnection(connectionType).connector)
@@ -31,7 +30,7 @@ export const Option = ({
       if (deactivation === undefined) {
         return
       }
-      onDeactivate(deactivation)
+      setConnectionType({ connectionType: deactivation })
       return
     }
 
@@ -39,7 +38,8 @@ export const Option = ({
     if (!activation) {
       return
     }
-    onActivate(activation)
+    setConnectionType({ connectionType: activation })
+
     return
   }
 

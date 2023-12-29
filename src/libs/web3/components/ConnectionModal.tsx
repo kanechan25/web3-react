@@ -4,22 +4,20 @@ import { ConnectionOptions } from 'libs/web3/components/ConnectionOptions'
 import { ConnectionType } from 'libs/web3/config/connectors'
 import { useWeb3React } from '@web3-react/core'
 import styled from 'styled-components'
+import { useAppSelector } from 'App/hooks'
 
 const Web3Modal: React.FC = () => {
   const { isActive } = useWeb3React()
-  const [connectionType, setConnectionType] = useState<ConnectionType | null>(null)
+  const currentConnectionType = useAppSelector(({ wallet }) => wallet.connectionType)
+  console.log('__isActive', isActive)
+  console.log('__currentConnectionType', currentConnectionType)
   return (
     <Box sx={{ maxWidth: '350px' }}>
       <TermPolicyWrapper>
         By connecting a wallet, you agree to our Terms of Service and acknowledge that you have read and understand the
         our protocol disclaimer.
       </TermPolicyWrapper>
-      <ConnectionOptions
-        activeConnectionType={connectionType}
-        isConnectionActive={isActive}
-        onActivate={setConnectionType}
-        onDeactivate={setConnectionType}
-      />
+      <ConnectionOptions currentConnectionType={currentConnectionType} isConnectionActive={!!currentConnectionType} />
     </Box>
   )
 }

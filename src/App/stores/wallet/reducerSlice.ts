@@ -4,7 +4,7 @@ import { RootState } from '..'
 import { setConnectionType } from './actions'
 
 const initialState: IWallet = {
-  connectionType: '',
+  connectionType: null,
 }
 
 export const walletSlice = createSlice({

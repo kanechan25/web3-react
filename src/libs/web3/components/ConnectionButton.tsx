@@ -24,7 +24,7 @@ const Web3Connection = () => {
       <ConnectButton onClick={handleClickOpen}>
         {account ? shortenString(account, 4, 4) : 'Connect Wallet'}
       </ConnectButton>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog className='dialog-connect-modal' open={open} onClose={handleClose}>
         <CommonSpaceRowBox style={{ padding: '12px' }}>
           <Box>Connect Wallet</Box>
           <IconClose onClick={handleClose} iconColor='#000' />

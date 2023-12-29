@@ -1,6 +1,7 @@
 import React from 'react'
 import Homepage from 'App/pages/Homepage/Homepage'
 import Web3Info from 'App/pages/Web3Info/Web3Info'
+import { PageContainer } from 'App/styles/styled'
 
 type TRoutes = {
   href: string
@@ -19,13 +20,13 @@ export const routes: TRoutes[] = [
     href: '/tokenomics',
     id: 'tokenomics',
     name: 'Tokenomics',
-    element: <h1>TOKENOMICS</h1>,
+    element: <PageContainer>TOKENOMICS</PageContainer>,
   },
   {
     href: '/roadmap',
     id: 'roadmap',
     name: 'Roadmap',
-    element: <h1>ROADMAP</h1>,
+    element: <PageContainer>ROADMAP</PageContainer>,
   },
   {
     href: '/web3-info',

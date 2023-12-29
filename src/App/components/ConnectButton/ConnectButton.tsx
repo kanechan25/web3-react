@@ -9,7 +9,7 @@ interface IConnectButton {
 
 const ConnectButton: React.FC<IConnectButton> = ({ disabled, children, onClick, ...rest }) => {
   return (
-    <Button variant='outlined' color='warning' onClick={onClick} disabled={disabled} {...rest}>
+    <Button variant='contained' color='info' onClick={onClick} disabled={disabled} {...rest}>
       {children}
     </Button>
   )

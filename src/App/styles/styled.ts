@@ -8,17 +8,28 @@ export const AppWrapper = styled.div`
 
 export const BodyWrapper = styled.div`
   background: green;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-top: 65px;
-  padding: 24px;
+  min-height: 100vh;
+  padding-top: 100px;
   flex: 1;
   z-index: 1;
-  @media screen and (max-width: 576px) {
-    padding: 16px;
+`
+export const PageContainer = styled.div`
+  width: 100vw;
+  max-width: 1200px;
+  padding: 0 16px 0px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  color: #000;
+  overflow-y: hidden;
+  @media screen and (max-width: 768px) {
+    padding: 0px;
   }
 `
 
