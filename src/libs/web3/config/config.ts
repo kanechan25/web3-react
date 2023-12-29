@@ -6,18 +6,18 @@ export enum Chain {
 
 // Inputs that configure this example to run
 interface ExampleConfig {
-  chain: Chain;
+  chain: Chain
   rpc: {
-    polygon: string;
-    mainnet: string;
-  };
+    polygon: string
+    mainnet: string
+  }
 }
 
 // Example Configuration
 export const CurrentConfig: ExampleConfig = {
   chain: Chain.MAINNET,
   rpc: {
-    polygon: "",
-    mainnet: "",
+    polygon: '',
+    mainnet: '',
   },
-};
+}

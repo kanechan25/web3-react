@@ -1,6 +1,6 @@
-import walletReducer from "./wallet/reducerSlice";
+import walletReducer from './wallet/reducerSlice'
 const reducers = {
   wallet: walletReducer,
-};
+}
 
-export default reducers;
+export default reducers

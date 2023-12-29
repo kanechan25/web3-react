@@ -33,5 +33,5 @@ export declare const SUPPORTED_CHAINS: readonly [
   ChainId.POLYGON,
   ChainId.POLYGON_MUMBAI,
   ChainId.SEPOLIA
-];
-export declare type SupportedChainsType = typeof SUPPORTED_CHAINS[number];
+]
+export declare type SupportedChainsType = typeof SUPPORTED_CHAINS[number]

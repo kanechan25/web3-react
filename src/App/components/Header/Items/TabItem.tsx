@@ -1,33 +1,33 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
 
 interface ITabItem {
-  to: string;
-  content: React.ReactNode;
-  isActive: boolean;
-  onClick: () => void;
+  to: string
+  content: React.ReactNode
+  isActive: boolean
+  onClick: () => void
 }
 enum COLOR {
-  LIGHT = "#FFF",
-  DARK = "#000",
-  NONE = "transparent",
+  LIGHT = '#FFF',
+  DARK = '#000',
+  NONE = 'transparent',
 }
 const TabItem: React.FC<ITabItem> = ({ to, content, onClick, isActive }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const handleClick = () => {
-    onClick();
-    navigate(`${to}`);
-  };
+    onClick()
+    navigate(`${to}`)
+  }
 
   return (
     <MenuItem onClick={handleClick} active={isActive}>
       {content}
     </MenuItem>
-  );
-};
+  )
+}
 
-export default TabItem;
+export default TabItem
 
 const MenuItem = styled.div<{ active: boolean }>`
   padding: 8px 16px;
@@ -38,4 +38,4 @@ const MenuItem = styled.div<{ active: boolean }>`
   user-select: none;
   color: ${({ active }) => (active ? COLOR.LIGHT : COLOR.DARK)};
   background: ${({ active }) => (active ? COLOR.DARK : COLOR.NONE)};
-`;
+`

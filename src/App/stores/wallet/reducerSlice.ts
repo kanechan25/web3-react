@@ -1,23 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { IWallet } from "App/types";
-import { RootState } from "..";
-import { setConnectionType } from "./actions";
+import { createSlice } from '@reduxjs/toolkit'
+import { IWallet } from 'App/types'
+import { RootState } from '..'
+import { setConnectionType } from './actions'
 
 const initialState: IWallet = {
-  connectionType: "",
-};
+  connectionType: '',
+}
 
 export const walletSlice = createSlice({
-  name: "wallet",
+  name: 'wallet',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(setConnectionType, (state, action) => {
-      state.connectionType = action.payload.connectionType;
-    });
+      state.connectionType = action.payload.connectionType
+    })
   },
-});
+})
 
-export const connectionType = (state: RootState) => state.wallet.connectionType;
+export const connectionType = (state: RootState) => state.wallet.connectionType
 
-export default walletSlice.reducer;
+export default walletSlice.reducer

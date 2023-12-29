@@ -1,5 +1,5 @@
 body {
-  font-family: "Inika", sans-serif;
+  font-family: 'Inika', sans-serif;
 }
 html,
 body {
@@ -8,7 +8,7 @@ body {
 }
 * {
   box-sizing: border-box;
-  font-family: "Inika", sans-serif;
+  font-family: 'Inika', sans-serif;
   color: black;
 }
 

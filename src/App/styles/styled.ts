@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const AppWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
-`;
+`
 
 export const BodyWrapper = styled.div`
   background: green;
@@ -20,7 +20,7 @@ export const BodyWrapper = styled.div`
   @media screen and (max-width: 576px) {
     padding: 16px;
   }
-`;
+`
 
 export const HeaderWrapper = styled.div`
   width: 100%;
@@ -28,22 +28,36 @@ export const HeaderWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 2;
-`;
+`
 
-export const CommonCenterBox = styled.div`
+export const CommonCenterColBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px;
-`;
+`
+export const CommonCenterRowBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+`
+export const CommonSpaceRowBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+`
 export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 24px;
-`;
+`
 
 export const HeaderLogo = styled.a`
   display: flex;
@@ -55,4 +69,4 @@ export const HeaderLogo = styled.a`
   :hover {
     cursor: pointer;
   }
-`;
+`
