@@ -6,8 +6,8 @@ import { Option } from 'libs/web3/components/Option'
 import iconMetamask from 'assets/images/wallets/metamask.png'
 import iconCoinbase from 'assets/images/wallets/coinbaseWalletIcon.svg'
 import iconWalletCn from 'assets/images/wallets/walletConnectIcon.svg'
-import { Box } from '@mui/material'
-import { SetConnectionTypeAction } from 'App/stores/wallet/actions'
+import { Box, Button } from '@mui/material'
+import { IconWrapper } from 'App/styles/styled'
 
 type ConnectionOptionsProps = {
   currentConnectionType: ConnectionType | null
@@ -27,18 +27,33 @@ export const ConnectionOptions: React.FC<ConnectionOptionsProps> = ({ currentCon
           iconWallet={iconMetamask}
         />
       ) : (
-        <a href={METAMASK_URL}>
-          <button>Install Metamask</button>
+        <a href={METAMASK_URL} target='__blank'>
+          <Button
+            sx={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'space-between',
+              p: '8px 24px',
+              borderRadius: '12px',
+              '&:hover': {
+                backgroundColor: '#efefef',
+              },
+              textTransform: 'none',
+            }}
+          >
+            <span>Install Metamask</span>
+            <IconWrapper size={24}>
+              <img src={iconMetamask} alt={'icon'} />
+            </IconWrapper>
+          </Button>
         </a>
       )}
-
       <Option
         isEnabled={isNoOptionActive || currentConnectionType === ConnectionType.COINBASE_WALLET}
         isConnected={currentConnectionType === ConnectionType.COINBASE_WALLET}
         connectionType={ConnectionType.COINBASE_WALLET}
         iconWallet={iconCoinbase}
       />
-
       <Option
         isEnabled={isNoOptionActive || currentConnectionType === ConnectionType.WALLET_CONNECT}
         isConnected={currentConnectionType === ConnectionType.WALLET_CONNECT}

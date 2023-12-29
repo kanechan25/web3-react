@@ -29,6 +29,6 @@ export const TermPolicyWrapper = styled.div`
   background: #efefef;
   padding: 12px;
   margin: 12px 16px;
-  border-radius: 16px;
+  border-radius: 12px;
   font-size: 13px;
 `

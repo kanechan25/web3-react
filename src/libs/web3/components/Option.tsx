@@ -9,6 +9,7 @@ import {
 } from 'libs/web3/config/connectors'
 import { Box, Button } from '@mui/material'
 import { useActions, useAppSelector } from 'App/hooks'
+import { IconWrapper } from 'App/styles/styled'
 
 export const Option = ({
   isEnabled,
@@ -21,8 +22,7 @@ export const Option = ({
   connectionType: ConnectionType
   iconWallet: string
 }) => {
-  const { setConnectionType } = useActions()
-
+  const { setConnectionType, setOpenModal } = useActions()
   const onClick = async () => {
     if (isConnected) {
       const deactivation = await tryDeactivateConnector(getConnection(connectionType).connector)
@@ -31,6 +31,7 @@ export const Option = ({
         return
       }
       setConnectionType({ connectionType: deactivation })
+      setOpenModal({ isOpenModal: false })
       return
     }
 
@@ -39,7 +40,7 @@ export const Option = ({
       return
     }
     setConnectionType({ connectionType: activation })
-
+    setOpenModal({ isOpenModal: false })
     return
   }
 
@@ -48,8 +49,9 @@ export const Option = ({
       sx={{
         width: '100%',
         display: 'flex',
-        p: '8px 24px',
         justifyContent: 'space-between',
+        p: '8px 24px',
+        borderRadius: '12px',
         '&:hover': {
           backgroundColor: '#efefef',
         },
@@ -59,21 +61,9 @@ export const Option = ({
       disabled={!isEnabled}
     >
       <span>{`${isConnected ? 'Disconnect' : 'Connect'} ${connectionType}`}</span>
-      <IconWrapper size={24}>
-        <img src={iconWallet} alt={'Icon'} />
+      <IconWrapper size={30}>
+        <img src={iconWallet} alt={'icon'} />
       </IconWrapper>
     </Button>
   )
 }
-const IconWrapper = styled.div<{ size?: number | null }>`
-  align-items: center;
-  justify-content: center;
-  & > img,
-  span {
-    height: ${({ size }) => (size ? size + 'px' : '24px')};
-    width: ${({ size }) => (size ? size + 'px' : '24px')};
-  }
-  @media screen and (max-width: 576px) {
-    align-items: flex-end;
-  }
-`

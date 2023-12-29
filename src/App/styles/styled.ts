@@ -13,7 +13,7 @@ export const BodyWrapper = styled.div`
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding-top: 100px;
+  padding: 100px 0px;
   flex: 1;
   z-index: 1;
 `
@@ -79,5 +79,11 @@ export const HeaderLogo = styled.a`
   text-decoration: none;
   :hover {
     cursor: pointer;
+  }
+`
+export const IconWrapper = styled.div<{ size?: number | null }>`
+  & > img {
+    height: ${({ size }) => (size ? size + 'px' : '24px')};
+    width: ${({ size }) => (size ? size + 'px' : '24px')};
   }
 `

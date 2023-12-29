@@ -6,17 +6,18 @@ import { useWeb3React } from '@web3-react/core'
 import { shortenString } from 'App/utils'
 import { IconClose } from 'assets/images/icons'
 import { CommonSpaceRowBox } from 'App/styles/styled'
+import { useActions, useAppSelector } from 'App/hooks'
 const Web3Connection = () => {
   const { account } = useWeb3React()
-
-  const [open, setOpen] = React.useState(false)
+  const isOpenModal = useAppSelector(({ wallet }) => wallet.isOpenModal)
+  const { setOpenModal } = useActions()
 
   const handleClickOpen = () => {
-    setOpen(true)
+    setOpenModal({ isOpenModal: true })
   }
 
   const handleClose = () => {
-    setOpen(false)
+    setOpenModal({ isOpenModal: false })
   }
 
   return (
@@ -24,8 +25,17 @@ const Web3Connection = () => {
       <ConnectButton onClick={handleClickOpen}>
         {account ? shortenString(account, 4, 4) : 'Connect Wallet'}
       </ConnectButton>
-      <Dialog className='dialog-connect-modal' open={open} onClose={handleClose}>
-        <CommonSpaceRowBox style={{ padding: '12px' }}>
+      <Dialog
+        sx={{
+          '& .MuiDialog-paper': {
+            borderRadius: '16px',
+          },
+        }}
+        className='dialog-connect-modal'
+        open={isOpenModal}
+        onClose={handleClose}
+      >
+        <CommonSpaceRowBox style={{ padding: '16px 16px 10px' }}>
           <Box>Connect Wallet</Box>
           <IconClose onClick={handleClose} iconColor='#000' />
         </CommonSpaceRowBox>
