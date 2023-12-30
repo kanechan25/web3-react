@@ -7,7 +7,7 @@ export const AppWrapper = styled.div`
 `
 
 export const BodyWrapper = styled.div`
-  background: green;
+  background: #75ba75;
   display: flex;
   flex-direction: column;
   align-items: center;

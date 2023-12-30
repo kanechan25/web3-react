@@ -84,7 +84,7 @@ export const switchNetwork = async (chainId: ChainId, connectionType: Connection
     chainName: chainInfo.label,
     rpcUrls: [...chainInfo.rpcUrl],
     nativeCurrency: chainInfo.nativeCurrency,
-    blockExplorerUrls: [chainInfo.explorer],
+    blockExplorerUrls: [...chainInfo.explorer],
   }
   await connector.activate(addChainParameter)
 }

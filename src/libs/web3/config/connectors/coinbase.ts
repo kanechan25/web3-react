@@ -2,7 +2,7 @@ import { CoinbaseWallet } from '@web3-react/coinbase-wallet'
 import { initializeConnector } from '@web3-react/core'
 
 import { Connection, ConnectionType, onConnectionError } from 'libs/web3/config/connectors'
-import { INPUT_CHAIN_URL } from 'libs/web3/config/chainInfo'
+import { DEFAULT_CHAIN_URL } from 'libs/web3/config/chainInfo'
 
 export function buildCoinbaseWalletConnector() {
   const [web3CoinbaseWallet, web3CoinbaseWalletHooks] = initializeConnector<CoinbaseWallet>(
@@ -10,7 +10,7 @@ export function buildCoinbaseWalletConnector() {
       new CoinbaseWallet({
         actions,
         options: {
-          url: INPUT_CHAIN_URL,
+          url: DEFAULT_CHAIN_URL,
           appName: 'Web3 React',
           reloadOnDisconnect: false,
         },

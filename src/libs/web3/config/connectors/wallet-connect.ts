@@ -2,7 +2,7 @@ import { initializeConnector } from '@web3-react/core'
 import { WalletConnect } from '@web3-react/walletconnect'
 
 import { Connection, ConnectionType, onConnectionError } from 'libs/web3/config/connectors'
-import { CHAIN_TO_URL_MAP } from 'libs/web3/config/chainInfo'
+import { CHAIN_RPC_URL_MAP } from 'libs/web3/config/chainInfo'
 
 export function buildWalletConnectConnector() {
   const [web3WalletConnect, web3WalletConnectHooks] = initializeConnector<WalletConnect>(
@@ -10,7 +10,7 @@ export function buildWalletConnectConnector() {
       new WalletConnect({
         actions,
         options: {
-          rpc: CHAIN_TO_URL_MAP,
+          rpc: CHAIN_RPC_URL_MAP,
           qrcode: true,
         },
         onError: onConnectionError,
