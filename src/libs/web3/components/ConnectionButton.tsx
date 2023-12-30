@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Dialog, DialogContent, DialogTitle } from '@mui/material'
+import { Box, Dialog, DialogContent } from '@mui/material'
 import ConnectButton from 'App/components/ConnectButton/ConnectButton'
 import Web3Modal from 'libs/web3/components/ConnectionModal'
 import { useWeb3React } from '@web3-react/core'
@@ -22,8 +22,8 @@ const Web3Connection = () => {
 
   return (
     <React.Fragment>
-      <ConnectButton onClick={handleClickOpen}>
-        {account ? shortenString(account, 4, 4) : 'Connect Wallet'}
+      <ConnectButton onClick={handleClickOpen} background={account ? '#4d220c' : '#2b4e34'}>
+        {account ? shortenString(account, 7, 5) : 'Connect Wallet'}
       </ConnectButton>
       <Dialog
         sx={{

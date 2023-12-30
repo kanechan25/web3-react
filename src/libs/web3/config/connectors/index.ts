@@ -1,4 +1,4 @@
-import { Web3ReactHooks, useWeb3React } from '@web3-react/core'
+import { Web3ReactHooks } from '@web3-react/core'
 import { AddEthereumChainParameter, Connector } from '@web3-react/types'
 
 import { buildCoinbaseWalletConnector } from 'libs/web3/config/connectors/coinbase'

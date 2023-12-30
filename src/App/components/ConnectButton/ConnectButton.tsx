@@ -5,11 +5,12 @@ interface IConnectButton {
   children?: React.ReactNode
   disabled?: boolean
   onClick?: () => void
+  [key: string]: any
 }
 
 const ConnectButton: React.FC<IConnectButton> = ({ disabled, children, onClick, ...rest }) => {
   return (
-    <Button variant='contained' color='info' onClick={onClick} disabled={disabled} {...rest}>
+    <Button variant='contained' sx={{ ...rest }} onClick={onClick} disabled={disabled}>
       {children}
     </Button>
   )

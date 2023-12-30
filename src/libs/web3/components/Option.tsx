@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import {
   ConnectionType,
@@ -7,8 +6,8 @@ import {
   tryActivateConnector,
   tryDeactivateConnector,
 } from 'libs/web3/config/connectors'
-import { Box, Button } from '@mui/material'
-import { useActions, useAppSelector } from 'App/hooks'
+import { Button } from '@mui/material'
+import { useActions } from 'App/hooks'
 import { IconWrapper } from 'App/styles/styled'
 
 export const Option = ({

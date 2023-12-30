@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Box, Menu as Menulist } from '@mui/material'
 
 import menuIcon from 'assets/images/icons/dropdown-arrow.png'

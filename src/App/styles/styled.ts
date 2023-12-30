@@ -82,6 +82,9 @@ export const HeaderLogo = styled.a`
   }
 `
 export const IconWrapper = styled.div<{ size?: number | null }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   & > img {
     height: ${({ size }) => (size ? size + 'px' : '24px')};
     width: ${({ size }) => (size ? size + 'px' : '24px')};

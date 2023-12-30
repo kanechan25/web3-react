@@ -8,6 +8,14 @@ import {
   AVALANCHE_LIST,
   BASE_LIST,
 } from 'libs/web3/config/tokenLists'
+import ethereumLogo from 'assets/images/chains/ethereumCircle.png'
+import avaxLogo from 'assets/images/chains/avaxCircle.png'
+import arbitrumLogo from 'assets/images/chains/arbitrumCircle.png'
+import bnbLogo from 'assets/images/chains/bnbCircle.svg'
+import celoLogo from 'assets/images/chains/celoRectangle.png'
+import polygonLogo from 'assets/images/chains/polygonCircle.png'
+import optimismLogo from 'assets/images/chains/optimismCircle.png'
+
 import { RPC_URLS } from 'libs/web3/config/rpcUrl'
 
 export const METAMASK_URL = 'https://metamask.io/'
@@ -24,6 +32,7 @@ type ChainInfo = {
   defaultListUrl?: string
   statusPage?: string
   rpcUrl: string[]
+  iconUrls?: string[]
 }
 
 export const CHAIN_INFO: { [key: string]: ChainInfo } = {
@@ -33,6 +42,7 @@ export const CHAIN_INFO: { [key: string]: ChainInfo } = {
     label: 'Ethereum',
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
     rpcUrl: RPC_URLS[ChainId.MAINNET],
+    iconUrls: [ethereumLogo],
   },
   [ChainId.POLYGON]: {
     explorer: ['https://polygonscan.com/'],
@@ -40,6 +50,7 @@ export const CHAIN_INFO: { [key: string]: ChainInfo } = {
     label: 'Polygon',
     nativeCurrency: { name: 'Polygon Matic', symbol: 'MATIC', decimals: 18 },
     rpcUrl: RPC_URLS[ChainId.POLYGON],
+    iconUrls: [polygonLogo],
   },
   [ChainId.GOERLI]: {
     explorer: ['https://goerli.etherscan.io/'],
@@ -63,6 +74,7 @@ export const CHAIN_INFO: { [key: string]: ChainInfo } = {
     statusPage: 'https://optimism.io/status',
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
     rpcUrl: RPC_URLS[ChainId.OPTIMISM],
+    iconUrls: [optimismLogo],
   },
   [ChainId.OPTIMISM_GOERLI]: {
     bridge: 'https://app.optimism.io/bridge',
@@ -80,6 +92,7 @@ export const CHAIN_INFO: { [key: string]: ChainInfo } = {
     label: 'Arbitrum',
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
     rpcUrl: RPC_URLS[ChainId.ARBITRUM_ONE],
+    iconUrls: [arbitrumLogo],
   },
   [ChainId.ARBITRUM_GOERLI]: {
     bridge: 'https://bridge.arbitrum.io/',
@@ -111,6 +124,7 @@ export const CHAIN_INFO: { [key: string]: ChainInfo } = {
     label: 'Celo Alfajores',
     nativeCurrency: { name: 'Celo', symbol: 'CELO', decimals: 18 },
     rpcUrl: RPC_URLS[ChainId.CELO_ALFAJORES],
+    iconUrls: [celoLogo],
   },
   [ChainId.BNB]: {
     bridge: 'https://cbridge.celer.network/1/56',
@@ -119,6 +133,7 @@ export const CHAIN_INFO: { [key: string]: ChainInfo } = {
     label: 'BNB Chain',
     nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
     rpcUrl: RPC_URLS[ChainId.BNB],
+    iconUrls: [bnbLogo],
   },
   [ChainId.AVALANCHE]: {
     bridge: 'https://core.app/bridge/',
@@ -127,6 +142,7 @@ export const CHAIN_INFO: { [key: string]: ChainInfo } = {
     label: 'Avalanche',
     nativeCurrency: { name: 'AVAX', symbol: 'AVAX', decimals: 18 },
     rpcUrl: RPC_URLS[ChainId.AVALANCHE],
+    iconUrls: [avaxLogo],
   },
   [ChainId.BASE]: {
     bridge: 'https://bridge.base.org/deposit',

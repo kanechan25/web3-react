@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
-import { Box, Menu as Menulist } from '@mui/material'
+import { Box } from '@mui/material'
 import Logo from 'assets/images/wallets/metamask.png'
 import Web3Connection from 'libs/web3/components/ConnectionButton'
 import TabItem from 'App/components/Header/Items/TabItem'
 import MenulistMobile from 'App/components/Header/Items/MenuListMobile'
 import { routes } from 'App/pages/routes'
-import { CommonCenterColBox, HeaderContainer, HeaderLogo } from 'App/styles/styled'
+import { CommonCenterColBox, CommonCenterRowBox, HeaderContainer, HeaderLogo } from 'App/styles/styled'
+import SwitchSupportedChain from 'libs/web3/components/SwitchSupportedChain'
 
 export default function Header() {
   const [activePage, setActivePage] = useState<string>('home')
@@ -40,9 +40,10 @@ export default function Header() {
       </HeaderLogo>
       {/* Web navbar view */}
       <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '30px' }}>{getTabItemList()}</Box>
-      <Box className='web3-connect-button'>
+      <CommonCenterRowBox style={{ gap: '4px' }} className='web3-connect-button'>
+        <SwitchSupportedChain />
         <Web3Connection />
-      </Box>
+      </CommonCenterRowBox>
       {/* Mobile navbar view */}
       <Box sx={{ display: { xs: 'block', md: 'none' } }}>
         <MenulistMobile>

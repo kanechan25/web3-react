@@ -35,7 +35,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'prettier/prettier': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
     'react/prop-types': 'off',
     '@typescript-eslint/no-explicit-any': ['off'],
   },

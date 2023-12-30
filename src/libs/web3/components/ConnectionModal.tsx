@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Box } from '@mui/material'
 import { ConnectionOptions } from 'libs/web3/components/ConnectionOptions'
-import { ConnectionType } from 'libs/web3/config/connectors'
-import { useWeb3React } from '@web3-react/core'
 import styled from 'styled-components'
 import { useAppSelector } from 'App/hooks'
 
 const Web3Modal: React.FC = () => {
-  const { isActive } = useWeb3React()
   const currentConnectionType = useAppSelector(({ wallet }) => wallet.connectionType)
   return (
     <Box sx={{ maxWidth: '350px' }}>
