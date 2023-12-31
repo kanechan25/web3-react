@@ -19,5 +19,5 @@ export enum ChainId {
 }
 // NOTE: chains SUPPORTED_CHAINS have to have logo icon in the CHAIN_INFO
 // to show SUPPORTED_CHAINS's logo when users connect wrong chain networks
-export const SUPPORTED_CHAINS = [ChainId.ARBITRUM_ONE, ChainId.MAINNET]
+export const SUPPORTED_CHAINS = [ChainId.MAINNET, ChainId.ARBITRUM_ONE]
 export declare type SupportedChainsType = typeof SUPPORTED_CHAINS[number]
