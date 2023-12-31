@@ -1,8 +1,6 @@
 import { ChainId } from 'libs/web3/config/chains'
 import { SUPPORTED_CHAINS } from 'libs/web3/config/chains'
 import { CHAIN_INFO } from 'libs/web3/config/chainInfo'
-import { ethers } from 'ethers'
-import ERC20ABI from 'libs/abis/erc20.json'
 import { RPC_URLS } from 'libs/web3/config/rpcUrl'
 
 export function isSupportedChain(chainId: number | null | undefined | ChainId): boolean {
