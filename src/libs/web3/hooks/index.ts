@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { JsonRpcProvider } from '@ethersproject/providers'
 import { utils } from 'ethers'
 import { getRpcUrl } from 'libs/web3/utils'

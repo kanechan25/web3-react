@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import { useAppSelector } from 'App/hooks'
 import { PageContainer } from 'App/styles/styled'
 import { shortenString } from 'App/utils'
-import { getNameChain, getRpcUrl } from 'libs/web3/utils'
+import { getNameChain } from 'libs/web3/utils'
 import { useGetETHBalance } from 'libs/web3/hooks'
 
 const Web3Info = () => {
