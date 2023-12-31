@@ -9,14 +9,14 @@ export function isSupportedChain(chainId: number | null | undefined | ChainId): 
   return SUPPORTED_CHAINS.includes(chainId as ChainId)
 }
 export function getLogoChain(chainId: number | null | undefined | ChainId) {
-  const iconUrls = chainId && CHAIN_INFO[chainId as ChainId]?.iconUrls
+  const iconUrls = CHAIN_INFO[chainId as ChainId]?.iconUrls
   return !!iconUrls ? iconUrls[0] : ''
 }
 export function getNameChain(chainId: number | null | undefined | ChainId) {
-  const chainName = chainId && CHAIN_INFO[chainId as ChainId]?.label
+  const chainName = CHAIN_INFO[chainId as ChainId]?.label
   return chainName
 }
 export function getRpcUrl(chainId: number | null | undefined | ChainId) {
-  const rpcUrl = chainId && RPC_URLS[chainId as ChainId][0]
-  return rpcUrl || ''
+  const rpcUrl = chainId && RPC_URLS[chainId as ChainId]
+  return !!rpcUrl ? rpcUrl[0] : ''
 }
